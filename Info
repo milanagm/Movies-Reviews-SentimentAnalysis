@@ -1,0 +1,32 @@
+Data: IMDB Dataset for Movies Reviews
+Basic Statistics: 
+- four columns: Ratings, Reviews, Movies(movie name), Resenhas(review translation to portuguese)
+- number of reviews: 149780
+- number of movies: 14205
+- review language: english
+- rating between 1 o 10
+
+My Goal: Sentiment Analyzer Model to categorize reviews as positive / negative 
+-> we will focus in the data features: rating and review
+
+
+Approach: 
+1. Mapping ratings on one to ten binary classes (positive / negative) 
+  (so we need to convert this problem into binary class text classification problem)
+2. adressing sentiment challenges as sarcasm, multi polarity and negation
+3. develope nlp / ml model to categorize (positive / negative) english text reviws 
+4. deploy sentiment analyzer model on AWS cloud using rest API
+
+
+1. Mapping to Data Science Problem
+Start: we have 10 attribute values and we want to class onto 2 classes
+Binary Classes: 
+- 1 to 10 as "Negative"
+- 5 to 6 as "Neutral" -> we will remove this data as we want to focus only on positive and negative
+- 7 to 10 as "Positive" 
+Goal: Sentiment Value (positive / negative) , Movie attribute liked (and disliked) by majority, 
+
+2. Challenges while developing Sentiment Analyzer
+Sarcasm: e.g. negative reviews using positive words 
+Multi Polarity: e.g. review is both positive and negative
+Negation: e.g. words like "not", "never" as in "I don't call this movie a good movie"
