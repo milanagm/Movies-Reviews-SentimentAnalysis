@@ -58,13 +58,3 @@ class DataCleaner():
         content = remove_stopwords(content, self.stop_words)      
         return content
  
-
-## LEMMATIZIEREN UND TOKENIZER KLASSE ##
-class LemmaTokenizer(object):
-    def __init__(self):
-        self.wordnetlemma = WordNetLemmatizer()
-
-    def lemmamee(self, reviews):
-        return [self.wordnetlemma.lemmatize(word) for word in word_tokenize(reviews)]
-
-
