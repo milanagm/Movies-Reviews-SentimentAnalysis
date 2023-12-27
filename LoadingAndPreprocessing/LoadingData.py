@@ -10,8 +10,7 @@ def load_dataset(path):
     df = pd.read_csv(path, encoding='latin-1')
     df['Label'] = df['Ratings'].apply(lambda x: 1 if x >= 7 else (0 if x <= 4 else 2))  #Featureengineering
     df = df[df.Label < 2]
-    data = df[['Reviews', 'Label']]
-    return data
+    return df
 
 def get_english_reviews(path_to_csv):
     data = load_dataset(path_to_csv)
@@ -33,9 +32,8 @@ def get_english_reviews(path_to_csv):
     data['language'] = data['Reviews'].apply(lambda text: detect(text) if text.strip() != "" else "")
     # exkludieren der nicht englischen reviews 
     data = data[data['language'] == 'en'] 
-    #rausnehmen der spalte englisch
-    data = data[['Reviews', 'Label']]
-
+    #rausnehmen der spalte language 
+    data = data.drop('language', axis=1)
     return data
 
 '''
