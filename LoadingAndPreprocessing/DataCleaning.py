@@ -9,6 +9,9 @@ import re #regular expressions (for strings) e.g. substituieren mit re.sub
 from sklearn.base import BaseEstimator, TransformerMixin 
 from nltk import word_tokenize    
 from nltk.stem import WordNetLemmatizer # e.g. playing -> play  
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
 
 
 
@@ -61,7 +64,7 @@ class DataCleaner():
 
 
 
- 
+
 ## EXPLORATORY DATA ANALYSIS /LET'S SEE SOME GRAPHS ##
 # Check Distripution: charachters in reviews pro labelgruppe
 def character_distribution(data):
